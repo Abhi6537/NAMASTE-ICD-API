@@ -4,13 +4,15 @@ import logging
 import time
 
 from app.api.models.common import SearchType, NAMASTETerm, ICD11Term
-from app.api.services.mapping import MappingService
+from app.api.services.namaste import NAMASTEService
+from app.api.services.icd11 import ICD11Service
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
 
-# Initialize services (singleton pattern implicitly via import)
-mapping_service = MappingService()
+# Initialize services directly (avoid circular import)
+namaste_service = NAMASTEService()
+icd11_service = ICD11Service()
 
 @router.get("/api/v1/search")
 async def search_terms(
@@ -36,7 +38,7 @@ async def search_terms(
         if source in [SearchType.NAMASTE, SearchType.BOTH]:
             try:
                 logger.info(f"🔎 Searching NAMASTE for: {q}")
-                namaste_results = await mapping_service.namaste_service.search_namaste(q, ayush_system)
+                namaste_results = await namaste_service.search_namaste(q, ayush_system)
                 results["namaste_results"] = namaste_results
                 logger.info(f"✅ NAMASTE search completed: {len(namaste_results)} results")
             except HTTPException as e:
@@ -54,7 +56,7 @@ async def search_terms(
         if source in [SearchType.ICD11, SearchType.BOTH]:
             try:
                 logger.info(f"🔎 Searching ICD-11 for: {q}")
-                icd11_results = await mapping_service.icd11_service.search_icd11(q)
+                icd11_results = await icd11_service.search_icd11(q)
                 results["icd11_results"] = icd11_results
                 logger.info(f"✅ ICD-11 search completed: {len(icd11_results)} results")
             except Exception as e:

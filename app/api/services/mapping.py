@@ -6,6 +6,7 @@ from app.api.models.common import NAMASTETerm, ICD11Term, MappingResult
 from app.core.config import settings
 from app.api.services.icd11 import ICD11Service
 from app.api.services.namaste import NAMASTEService
+from app.api.services.fhir import FHIRService
 
 logger = logging.getLogger(__name__)
 
@@ -13,6 +14,7 @@ class MappingService:
     def __init__(self):
         self.icd11_service = ICD11Service()
         self.namaste_service = NAMASTEService()
+        self.fhir_service = FHIRService()
         self.mapping_cache: Dict[str, MappingResult] = {}
 
     def calculate_similarity_score(self, term1: str, term2: str) -> float:
@@ -20,7 +22,6 @@ class MappingService:
         if not term1 or not term2:
             return 0.0
             
-        # Simple implementation can be enhanced with ML models
         term1_lower = term1.lower().strip()
         term2_lower = term2.lower().strip()
 
@@ -29,7 +30,6 @@ class MappingService:
         elif term1_lower in term2_lower or term2_lower in term1_lower:
             return 0.8
         else:
-            # Calculate word overlap using Jaccard similarity
             words1 = set(term1_lower.split())
             words2 = set(term2_lower.split())
             if not words1 or not words2:
@@ -48,16 +48,13 @@ class MappingService:
         logger.info(f"Mapping NAMASTE term '{namaste_term.term}' (ID: {namaste_term.id}) to ICD-11...")
 
         try:
-            # Search ICD-11 for matches using the term
             icd11_results = await self.icd11_service.search_icd11(namaste_term.term)
 
-            # Also search using synonyms (limit to avoid too many API calls)
             for synonym in namaste_term.synonyms[:3]:
                 if synonym and synonym.strip():
                     additional_results = await self.icd11_service.search_icd11(synonym)
                     icd11_results.extend(additional_results)
 
-            # Remove duplicates and score matches
             seen_codes = set()
             scored_results: List[tuple[float, ICD11Term]] = []
 
@@ -66,21 +63,18 @@ class MappingService:
                     seen_codes.add(icd_term.code)
                     score = self.calculate_similarity_score(namaste_term.term, icd_term.title)
 
-                    # Check synonyms for better matches
                     for synonym in namaste_term.synonyms:
                         for icd_synonym in icd_term.synonyms:
                             if synonym and icd_synonym:
                                 synonym_score = self.calculate_similarity_score(synonym, icd_synonym)
-                                score = max(score, synonym_score * 0.9)  # Slightly lower weight for synonym
+                                score = max(score, synonym_score * 0.9)
 
-                    if score > 0.3:  # Threshold for inclusion
+                    if score > 0.3:
                         scored_results.append((score, icd_term))
 
-            # Sort by score and take top matches
             scored_results.sort(key=lambda x: x[0], reverse=True)
-            top_matches = [term for score, term in scored_results[:5]]  # Take top 5
+            top_matches = [term for score, term in scored_results[:5]]
 
-            # Determine confidence and method
             confidence = 0.0
             method = "no match"
             if scored_results:
@@ -88,7 +82,7 @@ class MappingService:
                 if confidence > 0.8:
                     method = "exact match"
                 elif confidence > 0.6:
-                    method = "partial match"
+                    method = "partial_match"
                 else:
                     method = "fuzzy_match"
             else:
@@ -103,14 +97,12 @@ class MappingService:
                 created_at=datetime.utcnow()
             )
 
-            # Cache result
             self.mapping_cache[cache_key] = result
             logger.info(f"Mapped {namaste_term.id} to {len(top_matches)} ICD-11 terms. Method: {method}, Confidence: {confidence:.2f}")
             return result
             
         except Exception as e:
             logger.error(f"❌ Error mapping {namaste_term.id}: {e}")
-            # Return empty result instead of raising exception
             result = MappingResult(
                 namaste_term=namaste_term,
                 icd11_matches=[],

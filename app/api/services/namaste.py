@@ -20,15 +20,25 @@ class NAMASTEService:
                 data = json.load(f)
 
             results: List[NAMASTETerm] = []
+            query_lower = query.lower().strip()
+            
             for item in data.get("results", []):
                 term = item.get("term", "")
-                system = item.get("system", "")
+                term_id = item.get("id", "")
+                system = item.get("ayush_system", "")
 
-                if query.lower() in term.lower():
+                # Check if query matches ID (exact match, case-insensitive) OR term (contains match)
+                matches = False
+                if query_lower == term_id.lower():
+                    matches = True
+                elif query_lower in term.lower():
+                    matches = True
+
+                if matches:
                     if not ayush_system or system.lower() == ayush_system.lower():
                         results.append(
                             NAMASTETerm(
-                                id=item.get("id", ""),
+                                id=term_id,
                                 term=term,
                                 term_hindi=item.get("term_hindi"),
                                 category=item.get("category", ""),
@@ -41,27 +51,15 @@ class NAMASTEService:
 
             if not results:
                 logger.warning(f"⚠️ No NAMASTE matches found for '{query}' (system={ayush_system})")
-                raise HTTPException(status_code=404, detail=f"No NAMASTE results for '{query}'")
+                return []
 
             logger.info(f"✅ Found {len(results)} NAMASTE matches for query='{query}'")
             return results
 
         except FileNotFoundError:
             logger.error(f"❌ NAMASTE data file not found: {self.data_file}")
-            # Return mock fallback
-            return [
-                NAMASTETerm(
-                    id="NAM001",
-                    term=query,
-                    term_hindi="अनुवाद",
-                    category="Disease",
-                    subcategory="Fever",
-                    ayush_system="Ayurveda",
-                    description="Fallback mock: traditional terminology example.",
-                    synonyms=["variant1", "variant2"],
-                )
-            ]
+            return []
 
         except Exception as e:
             logger.error(f"❌ Error searching NAMASTE: {e}")
-            raise HTTPException(status_code=500, detail="NAMASTE search failed")
+            return []

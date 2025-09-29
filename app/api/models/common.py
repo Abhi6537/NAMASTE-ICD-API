@@ -14,13 +14,18 @@ class NAMASTETerm(BaseModel):
     term_hindi: Optional[str] = None
     category: str
     subcategory: Optional[str] = None
-    ayush_system: str # Ayurveda, Yoga, Unani, Siddha, Homeopathy
+    ayush_system: str
     description: Optional[str] = None
     synonyms: List[str] = []
+    
+    @property
+    def english_name(self) -> str:
+        """Alias for term field"""
+        return self.term
 
 class ICD11Term(BaseModel):
-    id: str = ""  # Added id field for compatibility
-    uri: str = ""  # Keep your original uri field
+    id: str = ""
+    uri: str = ""
     code: str
     title: str
     definition: Optional[str] = None
