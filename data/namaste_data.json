@@ -1,0 +1,45 @@
+
+{
+  "results": [
+    {
+      "id": "NAM001",
+      "term": "Fever",
+      "term_hindi": "ज्वर",
+      "category": "Symptom",
+      "subcategory": "General",
+      "ayush_system": "Ayurveda",
+      "description": "An elevated body temperature.",
+      "synonyms": ["Pyrexia", "Temperature"]
+    },
+    {
+      "id": "NAM002",
+      "term": "Headache",
+      "term_hindi": "सिरदर्द",
+      "category": "Symptom",
+      "subcategory": "Pain",
+      "ayush_system": "Allopathy",
+      "description": "Pain in the head.",
+      "synonyms": ["Cephalgia"]
+    },
+    {
+      "id": "NAM003",
+      "term": "Joint Pain",
+      "term_hindi": "जोड़ों का दर्द",
+      "category": "Symptom",
+      "subcategory": "Pain",
+      "ayush_system": "Yoga",
+      "description": "Pain felt in the joints.",
+      "synonyms": ["Arthralgia"]
+    },
+    {
+      "id": "NAM004",
+      "term": "Diabetes Mellitus",
+      "term_hindi": "मधुमेह",
+      "category": "Disease",
+      "subcategory": "Metabolic",
+      "ayush_system": "Unani",
+      "description": "A metabolic disease that causes high blood sugar.",
+      "synonyms": ["Sugar", "High Blood Sugar"]
+    }
+  ]
+}
