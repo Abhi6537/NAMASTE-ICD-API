@@ -80,15 +80,13 @@ def calculate_enhanced_confidence(namaste_dict: dict, icd11_dict: dict) -> float
             category_bonus = 0.1
     
     # 6. Subcategory specificity penalty
-    # More specific terms (with subcategories) get lower scores for generic queries
     specificity_penalty = 0.0
     icd11_subcategory = icd11_dict.get('subcategory', '').strip()
     
     if icd11_subcategory and icd11_subcategory.lower() not in ['', 'general', 'unspecified']:
-        # Specific subcategories get a penalty for generic queries
         specificity_penalty = 0.15
     
-    # 7. Length ratio penalty (penalize very different lengths)
+    # 7. Length ratio penalty
     len_ratio = min(len(namaste_term), len(icd11_term)) / max(len(namaste_term), len(icd11_term))
     length_penalty = 1.0 - (0.2 * (1.0 - len_ratio))
     
@@ -129,30 +127,30 @@ async def search_terms(
         # Search NAMASTE if requested
         if source in [SearchType.NAMASTE, SearchType.BOTH]:
             try:
-                logger.info(f"🔎 Searching NAMASTE for: {q}")
+                logger.info(f"Searching NAMASTE for: {q}")
                 namaste_results = await namaste_service.search_namaste(q, ayush_system)
                 results["namaste_results"] = namaste_results
-                logger.info(f"✅ NAMASTE search completed: {len(namaste_results)} results")
+                logger.info(f"NAMASTE search completed: {len(namaste_results)} results")
             except HTTPException as e:
                 if e.status_code == 404:
-                    logger.warning(f"⚠️ No NAMASTE results for: {q}")
+                    logger.warning(f"No NAMASTE results for: {q}")
                     results["namaste_results"] = []
                 else:
-                    logger.error(f"❌ NAMASTE search error: {e}")
+                    logger.error(f"NAMASTE search error: {e}")
                     results["namaste_results"] = []
             except Exception as e:
-                logger.error(f"❌ Unexpected NAMASTE error: {e}")
+                logger.error(f"Unexpected NAMASTE error: {e}")
                 results["namaste_results"] = []
 
         # Search ICD-11 if requested
         if source in [SearchType.ICD11, SearchType.BOTH]:
             try:
-                logger.info(f"🔎 Searching ICD-11 for: {q}")
+                logger.info(f"Searching ICD-11 for: {q}")
                 icd11_results = await icd11_service.search_icd11(q)
                 
                 # Calculate individual confidence scores when both sources are searched
                 if source == SearchType.BOTH and results["namaste_results"]:
-                    logger.info(f"🎯 Calculating individual confidence scores for {len(icd11_results)} ICD-11 results...")
+                    logger.info(f"Calculating confidence scores for {len(icd11_results)} ICD-11 results...")
                     icd11_results_with_confidence = []
                     
                     # Use the first (most relevant) NAMASTE result
@@ -168,7 +166,7 @@ async def search_terms(
                         # Calculate enhanced confidence score
                         confidence = calculate_enhanced_confidence(namaste_dict, icd11_dict)
                         
-                        # Add confidence score (rounded to 2 decimals)
+                        # Add confidence score
                         icd11_dict["confidence_score"] = round(confidence, 2)
                         
                         # Add mapping quality indicator
@@ -183,37 +181,21 @@ async def search_terms(
                         else:
                             icd11_dict["mapping_quality"] = "poor"
                         
-                        # Log details for debugging
-                        logger.debug(
-                            f"  {icd11_dict.get('code', 'N/A')}: {icd11_dict.get('term', '')[:40]}... "
-                            f"= {confidence:.2f} ({icd11_dict['mapping_quality']})"
-                        )
-                        
                         icd11_results_with_confidence.append(icd11_dict)
                     
-                    # Sort by confidence score (highest first)
+                    # Sort by confidence score
                     icd11_results_with_confidence.sort(
                         key=lambda x: x.get("confidence_score", 0), 
                         reverse=True
                     )
                     
                     results["icd11_results"] = icd11_results_with_confidence
-                    
-                    # Log score distribution
-                    scores = [r.get("confidence_score", 0) for r in icd11_results_with_confidence]
-                    if scores:
-                        logger.info(
-                            f"✅ Confidence scores: "
-                            f"Best={scores[0]:.2f}, "
-                            f"Worst={scores[-1]:.2f}, "
-                            f"Avg={sum(scores)/len(scores):.2f}"
-                        )
                 else:
                     results["icd11_results"] = icd11_results
                 
-                logger.info(f"✅ ICD-11 search completed: {len(icd11_results)} results")
+                logger.info(f"ICD-11 search completed: {len(icd11_results)} results")
             except Exception as e:
-                logger.error(f"❌ ICD-11 search error: {e}")
+                logger.error(f"ICD-11 search error: {e}")
                 results["icd11_results"] = []
 
         # Calculate totals
@@ -223,9 +205,9 @@ async def search_terms(
         end_time = time.time()
         results["search_time_ms"] = int((end_time - start_time) * 1000)
         
-        logger.info(f"🎯 Search completed for '{q}': {results['total_results']} total results in {results['search_time_ms']}ms")
+        logger.info(f"Search completed for '{q}': {results['total_results']} total results in {results['search_time_ms']}ms")
         
-        # If no results found, return a more informative response
+        # If no results found
         if results["total_results"] == 0:
             results["status"] = "no_results"
             results["message"] = f"No results found for '{q}' in the selected sources"
@@ -233,7 +215,7 @@ async def search_terms(
         return results
 
     except Exception as e:
-        logger.error(f"❌ Search endpoint error: {e}")
+        logger.error(f"Search endpoint error: {e}")
         end_time = time.time()
         return {
             "query": q,

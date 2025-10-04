@@ -2,15 +2,13 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-# Import routers
-from app.api.endpoints import (
-    general,
-    search,
-    mapping,
-    fhir,
-    bulk_mapping,
-    terminology_systems
-)
+# Import routers - import the router directly, not the module
+from app.api.endpoints.general import router as general_router
+from app.api.endpoints.search import router as search_router
+from app.api.endpoints.mapping import router as mapping_router
+from app.api.endpoints.fhir import router as fhir_router
+from app.api.endpoints.bulk_mapping import router as bulk_mapping_router
+from app.api.endpoints.terminology_systems import router as terminology_systems_router
 
 app = FastAPI(
     title="Healthcare Terminology Integration API",
@@ -21,36 +19,20 @@ app = FastAPI(
 # CORS configuration for EMR integration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods
-    allow_headers=["*"],  # Allows all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-# Mount static files for local Namaste data if you serve it that way
-# If you use a local JSON file as shown in NAMASTEService, you might not need this.
-# If you need to serve it directly via HTTP, you would configure a server for that.
-# For demonstration, if namaste_data.json is in a 'static' folder in the root:
-# app.mount("/static", StaticFiles(directory="static"), name="static")
-
 # Add routers to the application
-app.include_router(general.router)
-app.include_router(search.router)
-app.include_router(mapping.router)
-app.include_router(fhir.router)
-app.include_router(bulk_mapping.router)
-app.include_router(terminology_systems.router)
-
-# Add a health check endpoint that isn't part of a router if preferred
-# Or ensure it's covered by the general router.
-
-# Optional: Root path for health check if not covered by a router
-# @app.get("/health")
-# async def health_check():
-#     return {"status": "ok"}
+app.include_router(general_router)
+app.include_router(search_router)
+app.include_router(mapping_router)
+app.include_router(fhir_router)
+app.include_router(bulk_mapping_router)
+app.include_router(terminology_systems_router)
 
 if __name__ == "__main__":
     import uvicorn
-    # This block is typically for running the app directly during development
-    # For production, you would use a WSGI server like Gunicorn with Uvicorn workers.
     uvicorn.run(app, host="0.0.0.0", port=8000)

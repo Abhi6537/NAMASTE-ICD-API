@@ -1,45 +1,1503 @@
-
 {
   "results": [
     {
-      "id": "NAM001",
-      "term": "Fever",
+      "id": "AYU001",
+      "term": "Jwara",
       "term_hindi": "ज्वर",
+      "category": "Disease",
+      "subcategory": "General",
+      "ayush_system": "Ayurveda",
+      "description": "Fever conditions in Ayurveda",
+      "synonyms": ["Fever", "Pyrexia"]
+    },
+    {
+      "id": "AYU002",
+      "term": "Shwasa",
+      "term_hindi": "श्वास",
+      "category": "Disease",
+      "subcategory": "Respiratory",
+      "ayush_system": "Ayurveda",
+      "description": "Respiratory disorders leading to breathlessness",
+      "synonyms": ["Dyspnea", "Asthma"]
+    },
+    {
+      "id": "AYU003",
+      "term": "Kasa",
+      "term_hindi": "कास",
+      "category": "Disease",
+      "subcategory": "Respiratory",
+      "ayush_system": "Ayurveda",
+      "description": "Cough conditions, including acute or chronic cough",
+      "synonyms": ["Cough"]
+    },
+    {
+      "id": "AYU004",
+      "term": "Aruchi",
+      "term_hindi": "अरुचि",
+      "category": "Symptom",
+      "subcategory": "Digestive",
+      "ayush_system": "Ayurveda",
+      "description": "Loss of appetite or aversion to food",
+      "synonyms": ["Anorexia"]
+    },
+    {
+      "id": "AYU005",
+      "term": "Atisara",
+      "term_hindi": "अतिसार",
+      "category": "Disease",
+      "subcategory": "Gastrointestinal",
+      "ayush_system": "Ayurveda",
+      "description": "Diarrhea or dysentery",
+      "synonyms": ["Diarrhea"]
+    },
+    {
+      "id": "AYU006",
+      "term": "Prameha",
+      "term_hindi": "प्रमेह",
+      "category": "Disease",
+      "subcategory": "Metabolic",
+      "ayush_system": "Ayurveda",
+      "description": "Urinary disorders, often associated with diabetes",
+      "synonyms": ["Diabetes", "Polyuria"]
+    },
+    {
+      "id": "AYU007",
+      "term": "Vatarakta",
+      "term_hindi": "वातरक्त",
+      "category": "Disease",
+      "subcategory": "Musculoskeletal",
+      "ayush_system": "Ayurveda",
+      "description": "Joint inflammation resembling gout",
+      "synonyms": ["Gout"]
+    },
+    {
+      "id": "AYU008",
+      "term": "Kshaya",
+      "term_hindi": "क्षय",
+      "category": "Disease",
+      "subcategory": "General",
+      "ayush_system": "Ayurveda",
+      "description": "Wasting disorders leading to emaciation",
+      "synonyms": ["Cachexia"]
+    },
+    {
+      "id": "AYU009",
+      "term": "Vishama Jwara",
+      "term_hindi": "विषम ज्वर",
+      "category": "Disease",
+      "subcategory": "Fever",
+      "ayush_system": "Ayurveda",
+      "description": "Intermittent fever with irregular patterns",
+      "synonyms": ["Intermittent Fever"]
+    },
+    {
+      "id": "AYU010",
+      "term": "Chardi",
+      "term_hindi": "छर्दी",
+      "category": "Symptom",
+      "subcategory": "Digestive",
+      "ayush_system": "Ayurveda",
+      "description": "Vomiting or emesis",
+      "synonyms": ["Emesis"]
+    },
+    {
+      "id": "AYU011",
+      "term": "Hikka",
+      "term_hindi": "हिक्का",
+      "category": "Symptom",
+      "subcategory": "Neurological",
+      "ayush_system": "Ayurveda",
+      "description": "Hiccups or involuntary contractions of diaphragm",
+      "synonyms": ["Singultus", "Hiccup"]
+    },
+    {
+      "id": "AYU012",
+      "term": "Krimi",
+      "term_hindi": "कीट",
+      "category": "Disease",
+      "subcategory": "Infectious",
+      "ayush_system": "Ayurveda",
+      "description": "Parasitic infections or infestations",
+      "synonyms": ["Parasites", "Helminths"]
+    },
+    {
+      "id": "AYU013",
+      "term": "Shirogaurava",
+      "term_hindi": "शिरो गौरव",
+      "category": "Symptom",
+      "subcategory": "Neurological",
+      "ayush_system": "Ayurveda",
+      "description": "Heaviness or pressure in the head",
+      "synonyms": ["Head Heaviness"]
+    },
+    {
+      "id": "AYU014",
+      "term": "Gulma",
+      "term_hindi": "गुल्म",
+      "category": "Disease",
+      "subcategory": "Abdominal",
+      "ayush_system": "Ayurveda",
+      "description": "Abdominal masses or tumors",
+      "synonyms": ["Abdominal Tumor"]
+    },
+    {
+      "id": "AYU015",
+      "term": "Ardita",
+      "term_hindi": "अर्धित",
+      "category": "Disease",
+      "subcategory": "Neurological",
+      "ayush_system": "Ayurveda",
+      "description": "Facial paralysis or hemiplegia",
+      "synonyms": ["Facial Paralysis"]
+    },
+    {
+      "id": "AYU016",
+      "term": "Vataja Prameha",
+      "term_hindi": "वातज प्रमेह",
+      "category": "Disease",
+      "subcategory": "Metabolic",
+      "ayush_system": "Ayurveda",
+      "description": "Diabetes due to vata dosha imbalance",
+      "synonyms": ["Vata Diabetes"]
+    },
+    {
+      "id": "AYU017",
+      "term": "Vata Vyadhi",
+      "term_hindi": "वात व्याधि",
+      "category": "Disease",
+      "subcategory": "Neurological",
+      "ayush_system": "Ayurveda",
+      "description": "Diseases caused by vata dosha imbalance",
+      "synonyms": ["Vata Disorders"]
+    },
+    {
+      "id": "AYU018",
+      "term": "Shiro Roga",
+      "term_hindi": "शिरो रोग",
+      "category": "Disease",
+      "subcategory": "Neurological",
+      "ayush_system": "Ayurveda",
+      "description": "Head-related disorders",
+      "synonyms": ["Headache"]
+    },
+    {
+      "id": "AYU019",
+      "term": "Vataja Ardita",
+      "term_hindi": "वातज अर्धित",
+      "category": "Disease",
+      "subcategory": "Neurological",
+      "ayush_system": "Ayurveda",
+      "description": "Facial paralysis due to vata imbalance",
+      "synonyms": ["Vata Facial Paralysis"]
+    },
+    {
+      "id": "AYU020",
+      "term": "Shiro Ruksha",
+      "term_hindi": "शिरो रूक्ष",
+      "category": "Symptom",
+      "subcategory": "Neurological",
+      "ayush_system": "Ayurveda",
+      "description": "Dryness or roughness of the head",
+      "synonyms": ["Dry Head"]
+    },
+    {
+      "id": "AYU021",
+      "term": "Vataja Gulma",
+      "term_hindi": "वातज गुल्म",
+      "category": "Disease",
+      "subcategory": "Abdominal",
+      "ayush_system": "Ayurveda",
+      "description": "Abdominal masses due to vata imbalance",
+      "synonyms": ["Vata Abdominal Tumor"]
+    },
+    {
+      "id": "AYU022",
+      "term": "Vataja Kshaya",
+      "term_hindi": "वातज क्षय",
+      "category": "Disease",
+      "subcategory": "General",
+      "ayush_system": "Ayurveda",
+      "description": "Wasting disorders due to vata imbalance",
+      "synonyms": ["Vata Wasting"]
+    },
+    {
+      "id": "AYU023",
+      "term": "Vataja Pandu",
+      "term_hindi": "वातज पाण्डु",
+      "category": "Disease",
+      "subcategory": "Hematological",
+      "ayush_system": "Ayurveda",
+      "description": "Anemia due to vata imbalance",
+      "synonyms": ["Vata Anemia"]
+    },
+    {
+      "id": "AYU024",
+      "term": "Vataja Vishama Jwara",
+      "term_hindi": "वातज विषम ज्वर",
+      "category": "Disease",
+      "subcategory": "Fever",
+      "ayush_system": "Ayurveda",
+      "description": "Intermittent fever due to vata imbalance",
+      "synonyms": ["Vata Intermittent Fever"]
+    },
+    {
+      "id": "AYU025",
+      "term": "Angamarda",
+      "term_hindi": "अंगामर्द",
+      "category": "Symptom",
+      "subcategory": "Musculoskeletal",
+      "ayush_system": "Ayurveda",
+      "description": "General body aches or stiffness",
+      "synonyms": ["Body Ache"]
+    },
+    {
+      "id": "AYU026",
+      "term": "Nidranasha",
+      "term_hindi": "निद्रानाश",
+      "category": "Symptom",
+      "subcategory": "Neurological",
+      "ayush_system": "Ayurveda",
+      "description": "Insomnia or sleeplessness",
+      "synonyms": ["Insomnia"]
+    },
+    {
+      "id": "AYU027",
+      "term": "Trishna",
+      "term_hindi": "त्रिष्णा",
       "category": "Symptom",
       "subcategory": "General",
       "ayush_system": "Ayurveda",
-      "description": "An elevated body temperature.",
-      "synonyms": ["Pyrexia", "Temperature"]
+      "description": "Excessive thirst",
+      "synonyms": ["Polydipsia"]
     },
     {
-      "id": "NAM002",
-      "term": "Headache",
-      "term_hindi": "सिरदर्द",
+      "id": "AYU028",
+      "term": "Udarshoola",
+      "term_hindi": "उदरशूल",
+      "category": "Disease",
+      "subcategory": "Digestive",
+      "ayush_system": "Ayurveda",
+      "description": "Abdominal pain or colic",
+      "synonyms": ["Colic"]
+    },
+    {
+      "id": "AYU029",
+      "term": "Vidradhi",
+      "term_hindi": "विद्राधि",
+      "category": "Disease",
+      "subcategory": "Dermatological",
+      "ayush_system": "Ayurveda",
+      "description": "Abscess or boil",
+      "synonyms": ["Boil", "Abscess"]
+    },
+    {
+      "id": "AYU030",
+      "term": "Amlapitta",
+      "term_hindi": "अम्लपित्त",
+      "category": "Disease",
+      "subcategory": "Digestive",
+      "ayush_system": "Ayurveda",
+      "description": "Acid-peptic disorders",
+      "synonyms": ["Hyperacidity"]
+    },
+    {
+      "id": "YNP001",
+      "term": "Asana",
+      "term_hindi": "आसन",
+      "category": "Practice",
+      "subcategory": "Yoga",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Physical posture or pose in yoga",
+      "synonyms": ["Pose", "Posture"]
+    },
+    {
+      "id": "YNP002",
+      "term": "Pranayama",
+      "term_hindi": "प्राणायाम",
+      "category": "Practice",
+      "subcategory": "Breathing",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Breath control techniques",
+      "synonyms": ["Breath Control"]
+    },
+    {
+      "id": "YNP003",
+      "term": "Dhyana",
+      "term_hindi": "ध्यान",
+      "category": "Practice",
+      "subcategory": "Meditation",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Meditation or focused concentration",
+      "synonyms": ["Meditation"]
+    },
+    {
+      "id": "YNP004",
+      "term": "Mantra",
+      "term_hindi": "मंत्र",
+      "category": "Practice",
+      "subcategory": "Chant",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Sacred utterance or chant",
+      "synonyms": ["Chant"]
+    },
+    {
+      "id": "YNP005",
+      "term": "Mudra",
+      "term_hindi": "मुद्रा",
+      "category": "Practice",
+      "subcategory": "Gesture",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Symbolic hand gesture",
+      "synonyms": ["Gesture"]
+    },
+    {
+      "id": "YNP006",
+      "term": "Kriya",
+      "term_hindi": "क्रिया",
+      "category": "Practice",
+      "subcategory": "Cleansing",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Yogic purification or action",
+      "synonyms": ["Action", "Practice"]
+    },
+    {
+      "id": "YNP007",
+      "term": "Surya Namaskar",
+      "term_hindi": "सूर्य नमस्कार",
+      "category": "Practice",
+      "subcategory": "Yoga",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Sun Salutation sequence of yoga postures",
+      "synonyms": ["Sun Salutation"]
+    },
+    {
+      "id": "YNP008",
+      "term": "Nadi Shodhana",
+      "term_hindi": "नाड़ी शोधन",
+      "category": "Practice",
+      "subcategory": "Breathing",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Alternate nostril breathing",
+      "synonyms": ["Alternate Nostril Breathing"]
+    },
+    {
+      "id": "YNP009",
+      "term": "Ujjayi",
+      "term_hindi": "उज्जयी",
+      "category": "Practice",
+      "subcategory": "Breathing",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Victorious breathing technique",
+      "synonyms": ["Victorious Breath"]
+    },
+    {
+      "id": "YNP010",
+      "term": "Kapalabhati",
+      "term_hindi": "कपालभाति",
+      "category": "Practice",
+      "subcategory": "Breathing",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Skull-shining breath technique",
+      "synonyms": ["Skull Shining Breath"]
+    },
+    {
+      "id": "YNP011",
+      "term": "Yoga Nidra",
+      "term_hindi": "योग निद्रा",
+      "category": "Practice",
+      "subcategory": "Relaxation",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Yogic sleep or deep relaxation practice",
+      "synonyms": ["Yogic Sleep"]
+    },
+    {
+      "id": "YNP012",
+      "term": "Bhastrika",
+      "term_hindi": "भस्त्रिक",
+      "category": "Practice",
+      "subcategory": "Breathing",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Bellows breathing technique",
+      "synonyms": ["Bellows Breath"]
+    },
+    {
+      "id": "YNP013",
+      "term": "Tadasana",
+      "term_hindi": "ताड़ासन",
+      "category": "Practice",
+      "subcategory": "Yoga",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Mountain Pose posture",
+      "synonyms": ["Mountain Pose"]
+    },
+    {
+      "id": "YNP014",
+      "term": "Savasana",
+      "term_hindi": "शवासन",
+      "category": "Practice",
+      "subcategory": "Yoga",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Corpse Pose posture",
+      "synonyms": ["Corpse Pose"]
+    },
+    {
+      "id": "YNP015",
+      "term": "Vrksasana",
+      "term_hindi": "वृक्षासन",
+      "category": "Practice",
+      "subcategory": "Yoga",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Tree Pose posture",
+      "synonyms": ["Tree Pose"]
+    },
+    {
+      "id": "YNP016",
+      "term": "Chandrasana",
+      "term_hindi": "चंद्रासन",
+      "category": "Practice",
+      "subcategory": "Yoga",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Moon Pose posture",
+      "synonyms": ["Moon Pose"]
+    },
+    {
+      "id": "YNP017",
+      "term": "Pratyahara",
+      "term_hindi": "प्रत्याहार",
+      "category": "Practice",
+      "subcategory": "Yoga",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Withdrawal of senses in yoga",
+      "synonyms": ["Sense Withdrawal"]
+    },
+    {
+      "id": "YNP018",
+      "term": "Hydrotherapy",
+      "term_hindi": "जलोपचार",
+      "category": "Therapy",
+      "subcategory": "Naturopathy",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Use of water (baths, compresses) for healing",
+      "synonyms": ["Water Therapy"]
+    },
+    {
+      "id": "YNP019",
+      "term": "Chromotherapy",
+      "term_hindi": "रंगोपचार",
+      "category": "Therapy",
+      "subcategory": "Naturopathy",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Use of colored lights for therapy",
+      "synonyms": ["Color Therapy"]
+    },
+    {
+      "id": "YNP020",
+      "term": "Mud Therapy",
+      "term_hindi": "मृदा चिकित्सा",
+      "category": "Therapy",
+      "subcategory": "Naturopathy",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Therapeutic use of mud packs",
+      "synonyms": ["Mud Pack Therapy"]
+    },
+    {
+      "id": "YNP021",
+      "term": "Aromatherapy",
+      "term_hindi": "आरोमाथेरेपी",
+      "category": "Therapy",
+      "subcategory": "Naturopathy",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Use of plant aromas (essential oils) for healing",
+      "synonyms": ["Fragrance Therapy"]
+    },
+    {
+      "id": "YNP022",
+      "term": "Sun Therapy",
+      "term_hindi": "सूर्योपचार",
+      "category": "Therapy",
+      "subcategory": "Naturopathy",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Controlled exposure to sunlight for health",
+      "synonyms": ["Heliotherapy"]
+    },
+    {
+      "id": "YNP023",
+      "term": "Acupressure",
+      "term_hindi": "अक्यूप्रेशर",
+      "category": "Therapy",
+      "subcategory": "Naturopathy",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Applying pressure to specific points on the body",
+      "synonyms": ["Pressure Therapy"]
+    },
+    {
+      "id": "YNP024",
+      "term": "Massage Therapy",
+      "term_hindi": "मालिश चिकित्सा",
+      "category": "Therapy",
+      "subcategory": "Naturopathy",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Therapeutic body massage",
+      "synonyms": ["Therapeutic Massage"]
+    },
+    {
+      "id": "YNP025",
+      "term": "Fasting Therapy",
+      "term_hindi": "उपवास चिकित्सा",
+      "category": "Therapy",
+      "subcategory": "Naturopathy",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Use of fasting for healing purposes",
+      "synonyms": ["Therapeutic Fasting"]
+    },
+    {
+      "id": "YNP026",
+      "term": "Juice Therapy",
+      "term_hindi": "रस चिकित्सा",
+      "category": "Therapy",
+      "subcategory": "Naturopathy",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Fasting by a juice-only diet",
+      "synonyms": ["Juice Fasting"]
+    },
+    {
+      "id": "YNP027",
+      "term": "Reflexology",
+      "term_hindi": "रिफ्लेक्सोलॉजी",
+      "category": "Therapy",
+      "subcategory": "Naturopathy",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Applying pressure to reflex points on feet or hands",
+      "synonyms": ["Zone Therapy"]
+    },
+    {
+      "id": "YNP028",
+      "term": "Prana",
+      "term_hindi": "प्राण",
+      "category": "Concept",
+      "subcategory": "Yoga",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Vital life energy in yogic tradition",
+      "synonyms": ["Vital Energy"]
+    },
+    {
+      "id": "YNP029",
+      "term": "Bandha",
+      "term_hindi": "बन्ध",
+      "category": "Practice",
+      "subcategory": "Yoga",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Body locks to control energy flow",
+      "synonyms": ["Energy Lock"]
+    },
+    {
+      "id": "YNP030",
+      "term": "Chakra",
+      "term_hindi": "चक्र",
+      "category": "Concept",
+      "subcategory": "Yoga",
+      "ayush_system": "Yoga & Naturopathy",
+      "description": "Energy centers in the body",
+      "synonyms": ["Energy Center"]
+    },
+    {
+      "id": "UNA001",
+      "term": "Dam",
+      "term_hindi": "डैम",
+      "category": "Concept",
+      "subcategory": "Humor",
+      "ayush_system": "Unani",
+      "description": "Blood (one of the four humors in Unani)",
+      "synonyms": ["Blood"]
+    },
+    {
+      "id": "UNA002",
+      "term": "Balgham",
+      "term_hindi": "बल्घम",
+      "category": "Concept",
+      "subcategory": "Humor",
+      "ayush_system": "Unani",
+      "description": "Phlegm (one of the four humors)",
+      "synonyms": ["Phlegm"]
+    },
+    {
+      "id": "UNA003",
+      "term": "Safra",
+      "term_hindi": "सफ़रा",
+      "category": "Concept",
+      "subcategory": "Humor",
+      "ayush_system": "Unani",
+      "description": "Yellow bile (one of the four humors)",
+      "synonyms": ["Yellow Bile"]
+    },
+    {
+      "id": "UNA004",
+      "term": "Sauda",
+      "term_hindi": "सौदा",
+      "category": "Concept",
+      "subcategory": "Humor",
+      "ayush_system": "Unani",
+      "description": "Black bile (one of the four humors)",
+      "synonyms": ["Black Bile"]
+    },
+    {
+      "id": "UNA005",
+      "term": "Aqrabillin",
+      "term_hindi": "अक्रबिलिन",
       "category": "Symptom",
-      "subcategory": "Pain",
-      "ayush_system": "Allopathy",
-      "description": "Pain in the head.",
-      "synonyms": ["Cephalgia"]
+      "subcategory": "Neurological",
+      "ayush_system": "Unani",
+      "description": "Tetanus (uncontrollable muscle contractions)",
+      "synonyms": ["Tetanus"]
     },
     {
-      "id": "NAM003",
-      "term": "Joint Pain",
-      "term_hindi": "जोड़ों का दर्द",
+      "id": "UNA006",
+      "term": "Radeemul Jild",
+      "term_hindi": "रदीमुल जिल्द",
+      "category": "Disease",
+      "subcategory": "Dermatological",
+      "ayush_system": "Unani",
+      "description": "Ringworm infection",
+      "synonyms": ["Ringworm"]
+    },
+    {
+      "id": "UNA007",
+      "term": "Niswan",
+      "term_hindi": "निसवान",
+      "category": "Disease",
+      "subcategory": "Reproductive",
+      "ayush_system": "Unani",
+      "description": "Gynecological disorders",
+      "synonyms": ["Gynaecological Disorders"]
+    },
+    {
+      "id": "UNA008",
+      "term": "Barood-e-Bakhtar",
+      "term_hindi": "बारू़द-ए-बख़्तर",
+      "category": "Substance",
+      "subcategory": "Medicine",
+      "ayush_system": "Unani",
+      "description": "Brick powder used traditionally",
+      "synonyms": ["Brick Powder"]
+    },
+    {
+      "id": "UNA009",
+      "term": "Irq Sudhdar",
+      "term_hindi": "इरक़ सुध्दार",
+      "category": "Substance",
+      "subcategory": "Medicine",
+      "ayush_system": "Unani",
+      "description": "Distilled rose water",
+      "synonyms": ["Rose Water"]
+    },
+    {
+      "id": "UNA010",
+      "term": "Miswak",
+      "term_hindi": "मिस्वाक",
+      "category": "Practice",
+      "subcategory": "Hygiene",
+      "ayush_system": "Unani",
+      "description": "Chewing stick for dental hygiene",
+      "synonyms": ["Toothstick"]
+    },
+    {
+      "id": "UNA011",
+      "term": "Bukhar",
+      "term_hindi": "बुखार",
+      "category": "Disease",
+      "subcategory": "General",
+      "ayush_system": "Unani",
+      "description": "Fever",
+      "synonyms": ["Fever"]
+    },
+    {
+      "id": "UNA012",
+      "term": "Qabd",
+      "term_hindi": "कब्ज़",
+      "category": "Disease",
+      "subcategory": "Digestive",
+      "ayush_system": "Unani",
+      "description": "Constipation",
+      "synonyms": ["Constipation"]
+    },
+    {
+      "id": "UNA013",
+      "term": "Istisqa",
+      "term_hindi": "इस्तीस्का",
       "category": "Symptom",
-      "subcategory": "Pain",
-      "ayush_system": "Yoga",
-      "description": "Pain felt in the joints.",
-      "synonyms": ["Arthralgia"]
+      "subcategory": "General",
+      "ayush_system": "Unani",
+      "description": "Edema or swelling",
+      "synonyms": ["Edema"]
     },
     {
-      "id": "NAM004",
-      "term": "Diabetes Mellitus",
-      "term_hindi": "मधुमेह",
+      "id": "UNA014",
+      "term": "Tirdad",
+      "term_hindi": "तिरदद",
+      "category": "Symptom",
+      "subcategory": "Respiratory",
+      "ayush_system": "Unani",
+      "description": "Hiccough",
+      "synonyms": ["Hiccough"]
+    },
+    {
+      "id": "UNA015",
+      "term": "Sadra",
+      "term_hindi": "सदरा",
+      "category": "Disease",
+      "subcategory": "Digestive",
+      "ayush_system": "Unani",
+      "description": "Gastritis",
+      "synonyms": ["Gastritis"]
+    },
+    {
+      "id": "UNA016",
+      "term": "Bot","term_hindi": "बोत",
+      "category": "Therapy",
+      "subcategory": "Poultice",
+      "ayush_system": "Unani",
+      "description": "Poultice application",
+      "synonyms": ["Poultice"]
+    },
+    {
+      "id": "UNA017",
+      "term": "Phitkari",
+      "term_hindi": "फिटकरी",
+      "category": "Substance",
+      "subcategory": "Medicine",
+      "ayush_system": "Unani",
+      "description": "Alum compound used medicinally",
+      "synonyms": ["Alum"]
+    },
+    {
+      "id": "UNA018",
+      "term": "Dam-e-Koh",
+      "term_hindi": "डैम-ए-कौह",
+      "category": "Substance",
+      "subcategory": "Medicine",
+      "ayush_system": "Unani",
+      "description": "Blood of mountain deer (traditional remedy)",
+      "synonyms": ["Deer Blood"]
+    },
+    {
+      "id": "UNA019",
+      "term": "Sharbat",
+      "term_hindi": "शर्बत",
+      "category": "Substance",
+      "subcategory": "Medicine",
+      "ayush_system": "Unani",
+      "description": "Herbal syrup",
+      "synonyms": ["Syrup"]
+    },
+    {
+      "id": "UNA020",
+      "term": "Ilaj",
+      "term_hindi": "इलाज",
+      "category": "Concept",
+      "subcategory": "Treatment",
+      "ayush_system": "Unani",
+      "description": "Treatment or remedy",
+      "synonyms": ["Treatment"]
+    },
+    {
+      "id": "UNA021",
+      "term": "Tabiyat",
+      "term_hindi": "तबीअत",
+      "category": "Concept",
+      "subcategory": "General",
+      "ayush_system": "Unani",
+      "description": "Constitution or nature of the body",
+      "synonyms": ["Temperament"]
+    },
+    {
+      "id": "UNA022",
+      "term": "Gheez",
+      "term_hindi": "घीज",
+      "category": "Concept",
+      "subcategory": "General",
+      "ayush_system": "Unani",
+      "description": "Membrane or covering",
+      "synonyms": ["Membrane"]
+    },
+    {
+      "id": "UNA023",
+      "term": "Taabeeb",
+      "term_hindi": "तबीब",
+      "category": "Profession",
+      "subcategory": "Medical",
+      "ayush_system": "Unani",
+      "description": "Physician (Unani doctor)",
+      "synonyms": ["Physician", "Doctor"]
+    },
+    {
+      "id": "UNA024",
+      "term": "Arq-e-Gulab",
+      "term_hindi": "अरक़-ए-गुलाब",
+      "category": "Substance",
+      "subcategory": "Medicine",
+      "ayush_system": "Unani",
+      "description": "Distilled rose water",
+      "synonyms": ["Rose Water"]
+    },
+    {
+      "id": "UNA025",
+      "term": "Khamir",
+      "term_hindi": "खमीर",
+      "category": "Substance",
+      "subcategory": "Medicine",
+      "ayush_system": "Unani",
+      "description": "Yeast or leaven used in formulations",
+      "synonyms": ["Yeast"]
+    },
+    {
+      "id": "UNA026",
+      "term": "Mizaj",
+      "term_hindi": "मिज़ाज",
+      "category": "Concept",
+      "subcategory": "General",
+      "ayush_system": "Unani",
+      "description": "Temperament or constitution",
+      "synonyms": ["Constitution"]
+    },
+    {
+      "id": "UNA027",
+      "term": "Murabba",
+      "term_hindi": "मुर्ब्बा",
+      "category": "Food",
+      "subcategory": "Diet",
+      "ayush_system": "Unani",
+      "description": "Preserved fruit jam used as tonic",
+      "synonyms": ["Jam"]
+    },
+    {
+      "id": "UNA028",
+      "term": "Sharbat-e-Laung",
+      "term_hindi": "शर्बत-ए-लौंग",
+      "category": "Substance",
+      "subcategory": "Medicine",
+      "ayush_system": "Unani",
+      "description": "Clove infused syrup",
+      "synonyms": ["Clove Syrup"]
+    },
+    {
+      "id": "UNA029",
+      "term": "Dawa",
+      "term_hindi": "दवा",
+      "category": "Concept",
+      "subcategory": "General",
+      "ayush_system": "Unani",
+      "description": "Medicine or drug",
+      "synonyms": ["Medicine", "Remedy"]
+    },
+    {
+      "id": "UNA030",
+      "term": "Tibbi",
+      "term_hindi": "तिज़बी",
+      "category": "Concept",
+      "subcategory": "General",
+      "ayush_system": "Unani",
+      "description": "Medical or medicinal (pertaining to health)",
+      "synonyms": ["Medical"]
+    },
+    {
+      "id": "SID001",
+      "term": "Kabasam",
+      "term_hindi": "कबसम",
+      "category": "Disease",
+      "subcategory": "Gastrointestinal",
+      "ayush_system": "Siddha",
+      "description": "Ascites or accumulation of fluid in abdomen",
+      "synonyms": ["Ascites"]
+    },
+    {
+      "id": "SID002",
+      "term": "Kudiviral",
+      "term_hindi": "कुदी विरल",
+      "category": "Disease",
+      "subcategory": "Dermatological",
+      "ayush_system": "Siddha",
+      "description": "Pustular skin eruption",
+      "synonyms": ["Pustular Eruption"]
+    },
+    {
+      "id": "SID003",
+      "term": "Avaran",
+      "term_hindi": "अवरन",
+      "category": "Pathological Process",
+      "subcategory": "General",
+      "ayush_system": "Siddha",
+      "description": "Obstruction of channels or layers in body",
+      "synonyms": ["Obstruction"]
+    },
+    {
+      "id": "SID004",
+      "term": "Kayakkasu",
+      "term_hindi": "कयकासु",
+      "category": "Disease",
+      "subcategory": "Musculoskeletal",
+      "ayush_system": "Siddha",
+      "description": "Body aches and pains",
+      "synonyms": ["Body Pain"]
+    },
+    {
+      "id": "SID005",
+      "term": "Sivappu",
+      "term_hindi": "सिवप्पु",
+      "category": "Symptom",
+      "subcategory": "Dermatological",
+      "ayush_system": "Siddha",
+      "description": "Redness or inflammatory condition",
+      "synonyms": ["Inflammation"]
+    },
+    {
+      "id": "SID006",
+      "term": "Vellai",
+      "term_hindi": "वेल्लै",
+      "category": "Symptom",
+      "subcategory": "Dermatological",
+      "ayush_system": "Siddha",
+      "description": "Whiteness or pallor condition",
+      "synonyms": ["Pallor"]
+    },
+    {
+      "id": "SID007",
+      "term": "Munasam",
+      "term_hindi": "मुना सम",
+      "category": "Symptom",
+      "subcategory": "General",
+      "ayush_system": "Siddha",
+      "description": "Fever or heat sensation",
+      "synonyms": ["Fever"]
+    },
+    {
+      "id": "SID008",
+      "term": "Pachai",
+      "term_hindi": "पचई",
+      "category": "Symptom",
+      "subcategory": "Dermatological",
+      "ayush_system": "Siddha",
+      "description": "Green coloration on skin or discharge",
+      "synonyms": ["Greenish Discoloration"]
+    },
+    {
+      "id": "SID009",
+      "term": "Piramozhi",
+      "term_hindi": "पिरमोजी",
+      "category": "Treatment",
+      "subcategory": "Therapy",
+      "ayush_system": "Siddha",
+      "description": "Emetic therapy",
+      "synonyms": ["Vomiting Therapy"]
+    },
+    {
+      "id": "SID010",
+      "term": "Karparad",
+      "term_hindi": "कर्परद",
+      "category": "Treatment",
+      "subcategory": "Therapy",
+      "ayush_system": "Siddha",
+      "description": "Mercurial treatment powder",
+      "synonyms": ["Mercury Calx"]
+    },
+    {
+      "id": "SID011",
+      "term": "Sangu",
+      "term_hindi": "सांगु",
+      "category": "Symptom",
+      "subcategory": "ENT",
+      "ayush_system": "Siddha",
+      "description": "Ear pain or ear infection",
+      "synonyms": ["Ear Pain"]
+    },
+    {
+      "id": "SID012",
+      "term": "Naasagum",
+      "term_hindi": "नासागुम",
+      "category": "Symptom",
+      "subcategory": "Respiratory",
+      "ayush_system": "Siddha",
+      "description": "Cold or nasal congestion",
+      "synonyms": ["Nasal Congestion"]
+    },
+    {
+      "id": "SID013",
+      "term": "Kumarasangili",
+      "term_hindi": "कुमारासँगिली",
+      "category": "Disease",
+      "subcategory": "Gastrointestinal",
+      "ayush_system": "Siddha",
+      "description": "Appendicitis",
+      "synonyms": ["Appendicitis"]
+    },
+    {
+      "id": "SID014",
+      "term": "Kaippittai",
+      "term_hindi": "कैपिट्टै",
+      "category": "Disease",
+      "subcategory": "Excretory",
+      "ayush_system": "Siddha",
+      "description": "Excessive sweating (hyperhidrosis)",
+      "synonyms": ["Hyperhidrosis"]
+    },
+    {
+      "id": "SID015",
+      "term": "Santhiram",
+      "term_hindi": "सांथिराम",
+      "category": "Symptom",
+      "subcategory": "ENT",
+      "ayush_system": "Siddha",
+      "description": "Nosebleed (epistaxis)",
+      "synonyms": ["Epistaxis"]
+    },
+    {
+      "id": "SID016",
+      "term": "Thalai Noi",
+      "term_hindi": "थलै नोइ",
+      "category": "Symptom",
+      "subcategory": "Neurological",
+      "ayush_system": "Siddha",
+      "description": "Headache",
+      "synonyms": ["Headache"]
+    },
+    {
+      "id": "SID017",
+      "term": "Kan Rosham",
+      "term_hindi": "कन रोशम्",
+      "category": "Disease",
+      "subcategory": "Ophthalmological",
+      "ayush_system": "Siddha",
+      "description": "Conjunctivitis",
+      "synonyms": ["Pink Eye"]
+    },
+    {
+      "id": "SID018",
+      "term": "Santhanam",
+      "term_hindi": "संत्रणम्",
+      "category": "Disease",
+      "subcategory": "Dermatological",
+      "ayush_system": "Siddha",
+      "description": "Measles",
+      "synonyms": ["Measles"]
+    },
+    {
+      "id": "SID019",
+      "term": "Vatharasanam",
+      "term_hindi": "वथरासनम",
+      "category": "Disease",
+      "subcategory": "Neurological",
+      "ayush_system": "Siddha",
+      "description": "Stroke (cerebrovascular accident)",
+      "synonyms": ["Stroke"]
+    },
+    {
+      "id": "SID020",
+      "term": "Vempilait",
+      "term_hindi": "वेम्पिलैत्",
+      "category": "Disease",
+      "subcategory": "Dermatological",
+      "ayush_system": "Siddha",
+      "description": "Vitiligo (depigmentation)",
+      "synonyms": ["Vitiligo"]
+    },
+    {
+      "id": "SID021",
+      "term": "Navarsanam",
+      "term_hindi": "नवरसनम",
+      "category": "Disease",
+      "subcategory": "ENT",
+      "ayush_system": "Siddha",
+      "description": "Nasal polyp or nasal growth",
+      "synonyms": ["Nasal Polyp"]
+    },
+    {
+      "id": "SID022",
+      "term": "Viratham",
+      "term_hindi": "विरथम्",
+      "category": "Symptom",
+      "subcategory": "General",
+      "ayush_system": "Siddha",
+      "description": "Fever",
+      "synonyms": ["Fever"]
+    },
+    {
+      "id": "SID023",
+      "term": "Arasam",
+      "term_hindi": "अरसम्",
+      "category": "Disease",
+      "subcategory": "Systemic",
+      "ayush_system": "Siddha",
+      "description": "Malaria-like fever",
+      "synonyms": ["Malaria"]
+    },
+    {
+      "id": "SID024",
+      "term": "Kollai Vadam",
+      "term_hindi": "कोल्लै वादम्",
+      "category": "Disease",
+      "subcategory": "Orthopedic",
+      "ayush_system": "Siddha",
+      "description": "Carpal tunnel syndrome",
+      "synonyms": ["Carpal Tunnel"]
+    },
+    {
+      "id": "SID025",
+      "term": "Gomathu Noigal",
+      "term_hindi": "गोमथु नोइगल्",
+      "category": "Symptom",
+      "subcategory": "General",
+      "ayush_system": "Siddha",
+      "description": "Mentally unstable (old age symptom)",
+      "synonyms": ["Dementia"]
+    },
+    {
+      "id": "SID026",
+      "term": "Urkodi Noigal",
+      "term_hindi": "उर्कोडि नोइगल्",
+      "category": "Disease",
+      "subcategory": "Urogenital",
+      "ayush_system": "Siddha",
+      "description": "Chronic urinary complaint",
+      "synonyms": ["Chronic Urinary Disorder"]
+    },
+    {
+      "id": "SID027",
+      "term": "Mantham Noigal",
+      "term_hindi": "मन्थम् नोइगल्",
+      "category": "Symptom",
+      "subcategory": "General",
+      "ayush_system": "Siddha",
+      "description": "Ear ringing (tinnitus)",
+      "synonyms": ["Tinnitus"]
+    },
+    {
+      "id": "SID028",
+      "term": "Iruvai Noi",
+      "term_hindi": "इरुवै नोइ",
+      "category": "Disease",
+      "subcategory": "General",
+      "ayush_system": "Siddha",
+      "description": "Chills and fever (fever fluctuations)",
+      "synonyms": ["Chills and Fever"]
+    },
+    {
+      "id": "SID029",
+      "term": "Koorai Noi",
+      "term_hindi": "कूरै नोइ",
+      "category": "Disease",
+      "subcategory": "Musculoskeletal",
+      "ayush_system": "Siddha",
+      "description": "Muscle twitching and spasms",
+      "synonyms": ["Muscle Spasm"]
+    },
+    {
+      "id": "SID030",
+      "term": "Kan Vadam",
+      "term_hindi": "कन वादम्",
+      "category": "Disease",
+      "subcategory": "ENT",
+      "ayush_system": "Siddha",
+      "description": "Ear wax (ear blockage)",
+      "synonyms": ["Earwax"]
+    },
+    {
+      "id": "HOM001",
+      "term": "Psora",
+      "term_hindi": "सोरा",
+      "category": "Concept",
+      "subcategory": "Chronic Miasm",
+      "ayush_system": "Homeopathy",
+      "description": "One of the chronic miasms in homeopathy",
+      "synonyms": ["Psoric Miasm"]
+    },
+    {
+      "id": "HOM002",
+      "term": "Sycosis",
+      "term_hindi": "साइकोसिस",
+      "category": "Concept",
+      "subcategory": "Chronic Miasm",
+      "ayush_system": "Homeopathy",
+      "description": "Chronic miasm associated with excess tissue formation",
+      "synonyms": ["Syphilitic Miasm"]
+    },
+    {
+      "id": "HOM003",
+      "term": "Allergy",
+      "term_hindi": "एलर्जी",
+      "category": "Disease",
+      "subcategory": "Immunological",
+      "ayush_system": "Homeopathy",
+      "description": "Hypersensitivity reactions",
+      "synonyms": ["Hypersensitivity"]
+    },
+    {
+      "id": "HOM004",
+      "term": "Migraine",
+      "term_hindi": "माइग्रेन",
+      "category": "Disease",
+      "subcategory": "Neurological",
+      "ayush_system": "Homeopathy",
+      "description": "Severe recurrent headaches",
+      "synonyms": ["Severe Headache"]
+    },
+    {
+      "id": "HOM005",
+      "term": "Hives",
+      "term_hindi": "हाइव्स",
+      "category": "Disease",
+      "subcategory": "Dermatological",
+      "ayush_system": "Homeopathy",
+      "description": "Urticaria or skin rash",
+      "synonyms": ["Urticaria"]
+    },
+    {
+      "id": "HOM006",
+      "term": "Acne",
+      "term_hindi": "पिंपल्स",
+      "category": "Disease",
+      "subcategory": "Dermatological",
+      "ayush_system": "Homeopathy",
+      "description": "Pimples or skin eruptions",
+      "synonyms": ["Pimples"]
+    },
+    {
+      "id": "HOM007",
+      "term": "Eczema",
+      "term_hindi": "एक्ज़ीमा",
+      "category": "Disease",
+      "subcategory": "Dermatological",
+      "ayush_system": "Homeopathy",
+      "description": "Inflammatory skin condition",
+      "synonyms": ["Atopic Dermatitis"]
+    },
+    {
+      "id": "HOM008",
+      "term": "Asthma",
+      "term_hindi": "अस्थमा",
+      "category": "Disease",
+      "subcategory": "Respiratory",
+      "ayush_system": "Homeopathy",
+      "description": "Chronic respiratory condition with wheezing",
+      "synonyms": ["Bronchial Asthma"]
+    },
+    {
+      "id": "HOM009",
+      "term": "Dysmenorrhea",
+      "term_hindi": "डिस्मेनोरिया",
+      "category": "Symptom",
+      "subcategory": "Gynecological",
+      "ayush_system": "Homeopathy",
+      "description": "Painful menstrual cramps",
+      "synonyms": ["Menstrual Pain"]
+    },
+    {
+      "id": "HOM010",
+      "term": "Cramps",
+      "term_hindi": "क्रैम्प्स",
+      "category": "Symptom",
+      "subcategory": "Neurological",
+      "ayush_system": "Homeopathy",
+      "description": "Muscle cramps",
+      "synonyms": ["Muscle Spasms"]
+    },
+    {
+      "id": "HOM011",
+      "term": "Nausea",
+      "term_hindi": "मतली",
+      "category": "Symptom",
+      "subcategory": "Digestive",
+      "ayush_system": "Homeopathy",
+      "description": "Feeling of sickness with urge to vomit",
+      "synonyms": ["Sickness", "Queasiness"]
+    },
+    {
+      "id": "HOM012",
+      "term": "Anxiety",
+      "term_hindi": "चिंता",
+      "category": "Symptom",
+      "subcategory": "Psychological",
+      "ayush_system": "Homeopathy",
+      "description": "Feeling of worry and fear",
+      "synonyms": ["Stress"]
+    },
+    {
+      "id": "HOM013",
+      "term": "Depression",
+      "term_hindi": "अवसाद",
+      "category": "Symptom",
+      "subcategory": "Psychological",
+      "ayush_system": "Homeopathy",
+      "description": "Persistent low mood",
+      "synonyms": ["Low Mood"]
+    },
+    {
+      "id": "HOM014",
+      "term": "Hypertension",
+      "term_hindi": "हाई ब्लड प्रेशर",
+      "category": "Disease",
+      "subcategory": "Cardiovascular",
+      "ayush_system": "Homeopathy",
+      "description": "High blood pressure",
+      "synonyms": ["High Blood Pressure"]
+    },
+    {
+      "id": "HOM015",
+      "term": "Diabetes",
+      "term_hindi": "डायबिटीज़",
       "category": "Disease",
       "subcategory": "Metabolic",
-      "ayush_system": "Unani",
-      "description": "A metabolic disease that causes high blood sugar.",
-      "synonyms": ["Sugar", "High Blood Sugar"]
+      "ayush_system": "Homeopathy",
+      "description": "Disorder of blood sugar regulation",
+      "synonyms": ["High Blood Sugar"]
+    },
+    {
+      "id": "HOM016",
+      "term": "Obesity",
+      "term_hindi": "मोटापा",
+      "category": "Disease",
+      "subcategory": "Metabolic",
+      "ayush_system": "Homeopathy",
+      "description": "Excessive body weight",
+      "synonyms": ["Overweight"]
+    },
+    {
+      "id": "HOM017",
+      "term": "Conjunctivitis",
+      "term_hindi": "नींद बहना",
+      "category": "Disease",
+      "subcategory": "Ophthalmological",
+      "ayush_system": "Homeopathy",
+      "description": "Inflammation of the eye membrane",
+      "synonyms": ["Pink Eye"]
+    },
+    {
+      "id": "HOM018",
+      "term": "Otitis",
+      "term_hindi": "कान का संक्रमण",
+      "category": "Disease",
+      "subcategory": "ENT",
+      "ayush_system": "Homeopathy",
+      "description": "Inflammation of the ear",
+      "synonyms": ["Ear Infection"]
+    },
+    {
+      "id": "HOM019",
+      "term": "Pneumonia",
+      "term_hindi": "न्यूमोनिया",
+      "category": "Disease",
+      "subcategory": "Respiratory",
+      "ayush_system": "Homeopathy",
+      "description": "Infection of the lungs",
+      "synonyms": ["Lung Infection"]
+    },
+    {
+      "id": "HOM020",
+      "term": "Gastritis",
+      "term_hindi": "गैस्ट्राइटिस",
+      "category": "Disease",
+      "subcategory": "Digestive",
+      "ayush_system": "Homeopathy",
+      "description": "Inflammation of the stomach lining",
+      "synonyms": ["Stomach Inflammation"]
+    },
+    {
+      "id": "HOM021",
+      "term": "Dermatitis",
+      "term_hindi": "डर्मेटाइटिस",
+      "category": "Disease",
+      "subcategory": "Dermatological",
+      "ayush_system": "Homeopathy",
+      "description": "Skin inflammation",
+      "synonyms": ["Skin Inflammation"]
+    },
+    {
+      "id": "HOM022",
+      "term": "Sinusitis",
+      "term_hindi": "साइनसाइटिस",
+      "category": "Disease",
+      "subcategory": "ENT",
+      "ayush_system": "Homeopathy",
+      "description": "Inflammation of sinuses",
+      "synonyms": ["Sinus Infection"]
+    },
+    {
+      "id": "HOM023",
+      "term": "Arthritis",
+      "term_hindi": "गठिया",
+      "category": "Disease",
+      "subcategory": "Musculoskeletal",
+      "ayush_system": "Homeopathy",
+      "description": "Joint inflammation",
+      "synonyms": ["Joint Pain"]
+    },
+    {
+      "id": "HOM024",
+      "term": "Rheumatism",
+      "term_hindi": "रूमेटिज़्म",
+      "category": "Disease",
+      "subcategory": "Musculoskeletal",
+      "ayush_system": "Homeopathy",
+      "description": "Joint and muscle pain",
+      "synonyms": ["Joint Pain"]
+    },
+    {
+      "id": "HOM025",
+      "term": "Cold",
+      "term_hindi": "जुकाम",
+      "category": "Disease",
+      "subcategory": "Respiratory",
+      "ayush_system": "Homeopathy",
+      "description": "Common cold, a viral upper respiratory infection",
+      "synonyms": ["Common Cold"]
+    },
+    {
+      "id": "HOM026",
+      "term": "Influenza",
+      "term_hindi": "इन्फ्लूएंजा",
+      "category": "Disease",
+      "subcategory": "Respiratory",
+      "ayush_system": "Homeopathy",
+      "description": "Flu, a contagious respiratory illness",
+      "synonyms": ["Flu"]
+    },
+    {
+      "id": "HOM027",
+      "term": "Constipation",
+      "term_hindi": "कब्ज़",
+      "category": "Disease",
+      "subcategory": "Digestive",
+      "ayush_system": "Homeopathy",
+      "description": "Difficulty in passing stool",
+      "synonyms": ["Obstipation"]
+    },
+    {
+      "id": "HOM028",
+      "term": "Cancer",
+      "term_hindi": "कैंसर",
+      "category": "Disease",
+      "subcategory": "Oncological",
+      "ayush_system": "Homeopathy",
+      "description": "Various malignant tumors",
+      "synonyms": ["Carcinoma"]
+    },
+    {
+      "id": "HOM029",
+      "term": "Hypothyroidism",
+      "term_hindi": "हायपोथायरायडिज़्म",
+      "category": "Disease",
+      "subcategory": "Endocrine",
+      "ayush_system": "Homeopathy",
+      "description": "Underactive thyroid gland",
+      "synonyms": ["Low Thyroid"]
+    },
+    {
+      "id": "HOM030",
+      "term": "Hyperthyroidism",
+      "term_hindi": "हायपरथायरायडिज़्म",
+      "category": "Disease",
+      "subcategory": "Endocrine",
+      "ayush_system": "Homeopathy",
+      "description": "Overactive thyroid gland",
+      "synonyms": ["High Thyroid"]
     }
   ]
 }
