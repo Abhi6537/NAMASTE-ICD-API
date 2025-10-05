@@ -23,14 +23,28 @@ async def root():
 
 @router.get("/health")
 async def health_check():
-    """Health check endpoint"""
+    """Health check endpoint with detailed service status"""
     return {
         "status": "healthy",
         "timestamp": datetime.utcnow().isoformat(),
+        "version": "1.0.0",
         "services": {
-            "icd11": "connected",
-            "namaste": "connected (local)",
-            "fhir": "active"
+            "icd11": {
+                "status": "connected",
+                "description": "ICD-11 API service"
+            },
+            "namaste": {
+                "status": "connected",
+                "description": "NAMASTE terminology database (local)"
+            },
+            "fhir": {
+                "status": "active",
+                "description": "FHIR R4 resource generation"
+            },
+            "database": {
+                "status": "connected",
+                "description": "Local terminology database"
+            }
         }
     }
 

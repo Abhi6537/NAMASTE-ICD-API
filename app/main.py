@@ -28,23 +28,32 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Stats tracking middleware
+# Stats tracking middleware - EXCLUDE monitoring endpoints
 @app.middleware("http")
 async def track_requests(request: Request, call_next):
+    # List of endpoints to exclude from tracking
+    excluded_paths = ['/health', '/api/v1/stats', '/api/v1/stats/reset', '/docs', '/openapi.json', '/redoc']
+    
+    # Check if the path should be excluded
+    should_track = not any(request.url.path == excluded or request.url.path.startswith(excluded) 
+                          for excluded in excluded_paths)
+    
     start_time = time.time()
     
     # Process the request
     response = await call_next(request)
     
-    # Calculate response time in milliseconds
-    response_time = (time.time() - start_time) * 1000
-    
-    # Record the request
-    stats_tracker.record_request(
-        endpoint=request.url.path,
-        response_time=response_time,
-        status_code=response.status_code
-    )
+    # Only track if not excluded
+    if should_track:
+        # Calculate response time in milliseconds
+        response_time = (time.time() - start_time) * 1000
+        
+        # Record the request
+        stats_tracker.record_request(
+            endpoint=request.url.path,
+            response_time=response_time,
+            status_code=response.status_code
+        )
     
     return response
 
