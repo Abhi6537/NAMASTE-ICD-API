@@ -1,14 +1,17 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
+import time
 
-# Import routers - import the router directly, not the module
+# Import routers
 from app.api.endpoints.general import router as general_router
 from app.api.endpoints.search import router as search_router
 from app.api.endpoints.mapping import router as mapping_router
 from app.api.endpoints.fhir import router as fhir_router
 from app.api.endpoints.bulk_mapping import router as bulk_mapping_router
 from app.api.endpoints.terminology_systems import router as terminology_systems_router
+
+# Import stats tracker
+from app.api.services.stats_tracker import stats_tracker
 
 app = FastAPI(
     title="Healthcare Terminology Integration API",
@@ -24,6 +27,26 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Stats tracking middleware
+@app.middleware("http")
+async def track_requests(request: Request, call_next):
+    start_time = time.time()
+    
+    # Process the request
+    response = await call_next(request)
+    
+    # Calculate response time in milliseconds
+    response_time = (time.time() - start_time) * 1000
+    
+    # Record the request
+    stats_tracker.record_request(
+        endpoint=request.url.path,
+        response_time=response_time,
+        status_code=response.status_code
+    )
+    
+    return response
 
 # Add routers to the application
 app.include_router(general_router)
